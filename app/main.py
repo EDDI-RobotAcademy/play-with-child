@@ -4,7 +4,7 @@ from colorama import Fore, Style, init
 init(autoreset=True)
 
 
-class Monster:
+class Unit:
     def __init__(self, name, health, attack_power, species):
         self.name = name
         self.health = health
@@ -27,15 +27,16 @@ class Monster:
             print(f"{target.name}은(는) 이미 쓰러진 상태입니다.")
 
 # 객체 생성
-tutorialBoss = Monster(name="튜토리얼보스", health=100, attack_power=20, species="휴먼")
-zombie = Monster(name="좀비", health=5, attack_power=10, species="언데드")
-knight = Monster(name="근위기사", health=25, attack_power=10, species="휴먼")
-wyvern = Monster(name="와이번", health=30, attack_power=25, species="드래곤")
-dark_knight = Monster(name="암흑기사", health=30, attack_power=30, species="언데드")
-skeleton_archer = Monster(name="스켈레톤 아처", health=5, attack_power=15, species="언데드")
-
+tutorialBoss = Unit(name="튜토리얼보스", health=100, attack_power=20, species="휴먼")
+zombie = Unit(name="좀비", health=5, attack_power=10, species="언데드")
+knight = Unit(name="근위기사", health=25, attack_power=10, species="휴먼")
+wyvern = Unit(name="와이번", health=30, attack_power=25, species="드래곤")
+dark_knight = Unit(name="암흑기사", health=30, attack_power=30, species="언데드")
+skeleton_archer = Unit(name="스켈레톤 아처", health=5, attack_power=15, species="언데드")
+flower = Unit(name="길거리에 놓인 식물", health=5, attack_power=5, species="트랜트")
+born_dragon = Unit(name="본 드래곤", health=3000000000,attack_power=9000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002,  species="언데드")
 # 출력
-unit_list = [zombie, knight, wyvern, dark_knight, skeleton_archer]
+unit_list = [zombie, knight, wyvern, dark_knight, skeleton_archer, flower, born_dragon]
 ally_list = []
 enemy_list = [tutorialBoss]
 
@@ -96,7 +97,8 @@ while True:
         unit_idx = input("출전할 유닛 번호를 입력하세요: ")
 
         if unit_idx.isdigit() and 1 <= int(unit_idx) <= len(unit_list):
-            selected_unit = unit_list.pop(int(unit_idx) - 1)
+            # selected_unit = unit_list.pop(int(unit_idx) - 1)
+            selected_unit = unit_list[int(unit_idx) - 1]
             ally_list.append(selected_unit)
             print(f"\n{selected_unit.name}이(가) 출전했습니다!")
         else:
