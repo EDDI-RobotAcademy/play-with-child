@@ -34,11 +34,14 @@ wyvern = Unit(name="와이번", health=30, attack_power=25, species="드래곤")
 dark_knight = Unit(name="암흑기사", health=30, attack_power=30, species="언데드")
 skeleton_archer = Unit(name="스켈레톤 아처", health=5, attack_power=15, species="언데드")
 flower = Unit(name="길거리에 놓인 식물", health=5, attack_power=5, species="트랜트")
-born_dragon = Unit(name="본 드래곤", health=3000000000,attack_power=9000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002,  species="언데드")
+born_dragon = Unit(name="본 드래곤", health=30000,attack_power=90000,  species="언데드")
+skeleton_archer_tutorialBoss = Unit(name="스캐래톤 아처 듀토리얼 보스", health=90000000000000000000000, attack_power=3000,species="휴먼")
+
 # 출력
 unit_list = [zombie, knight, wyvern, dark_knight, skeleton_archer, flower, born_dragon]
 ally_list = []
-enemy_list = [tutorialBoss]
+
+enemy_list = [skeleton_archer_tutorialBoss]
 
 while True:
     print("\n[메뉴 선택]")
